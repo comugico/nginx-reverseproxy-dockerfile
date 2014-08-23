@@ -7,8 +7,8 @@ RUN wget "http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-
 RUN yum localinstall -y /opt/downloaded.rpm
 RUN yum install -y nginx
 
-RUN systemctl stop nginx.service
-RUN systemctl disable nginx.service
+RUN service nginx stop
+RUN update-rc.d nginx disable
 
 ADD nginx.conf /etc/nginx/conf.d/nginx-reverseproxy-dockerfile.conf
 
