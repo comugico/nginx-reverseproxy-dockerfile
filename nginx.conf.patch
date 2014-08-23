@@ -1,0 +1,13 @@
+*** nginx.conf	2014-08-24 01:30:47.000000000 +0900
+--- nginx.conf.modified	2014-08-24 01:30:47.000000000 +0900
+***************
+*** 10,15 ****
+--- 10,17 ----
+      worker_connections  1024;
+  }
+  
++ env AIPO_PORT_80_TCP_ADDR;
++ env AIPO_PORT_80_TCP_PORT;
+  
+  http {
+      include       /etc/nginx/mime.types;
