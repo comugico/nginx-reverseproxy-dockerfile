@@ -8,13 +8,10 @@ RUN yum localinstall -y /opt/downloaded.rpm
 RUN yum install -y nginx
 
 ADD reverseproxy.conf /etc/nginx/conf.d/nginx-reverseproxy-dockerfile.conf
-ADD nginx.conf.patch /opt/nginx.conf.patch
-
-RUN patch /etc/nginx/nginx.conf < /opt/nginx.conf.patch
 
 EXPOSE 80
 WORKDIR /etc/nginx
 
-CMD sed -i "s/set \$AIPO_PORT_80_TCP_ADDR .*;\$/set \$AIPO_PORT_80_TCP_ADDR $AIPO_PORT_80_TCP_ADDR;/g" /etc/nginx/nginx.conf
-CMD sed -i "s/set \$AIPO_PORT_80_TCP_PORT .*;\$/set \$AIPO_PORT_80_TCP_PORT $AIPO_PORT_80_TCP_PORT;/g" /etc/nginx/nginx.conf
+CMD sed -i "s/set \$AIPO_PORT_80_TCP_ADDR .*;\$/set \$AIPO_PORT_80_TCP_ADDR $AIPO_PORT_80_TCP_ADDR;/g" /etc/nginx/conf.d/nginx-reverseproxy-dockerfile.conf
+CMD sed -i "s/set \$AIPO_PORT_80_TCP_PORT .*;\$/set \$AIPO_PORT_80_TCP_PORT $AIPO_PORT_80_TCP_PORT;/g" /etc/nginx/conf.d/nginx-reverseproxy-dockerfile.conf
 CMD nginx -g "daemon off;"
