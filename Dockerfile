@@ -1,7 +1,7 @@
 FROM centos:centos7
 
 RUN yum update -y
-RUN yum install -y wget tree sudo systemd
+RUN yum install -y wget tree sudo systemd diffutils patch
 
 RUN wget "http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm" -O "/opt/downloaded.rpm"
 RUN yum localinstall -y /opt/downloaded.rpm
