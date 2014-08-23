@@ -7,7 +7,7 @@ RUN wget "http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-
 RUN yum localinstall -y /opt/downloaded.rpm
 RUN yum install -y nginx
 
-ADD nginx.conf /etc/nginx/conf.d/nginx-reverseproxy-dockerfile.conf
+ADD reverseproxy.conf /etc/nginx/conf.d/nginx-reverseproxy-dockerfile.conf
 
 EXPOSE 80
 WORKDIR /etc/nginx
