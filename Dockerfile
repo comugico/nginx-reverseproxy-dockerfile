@@ -17,3 +17,4 @@ WORKDIR /etc/nginx
 
 CMD sed -i "s/set \$AIPO_PORT_80_TCP_ADDR .*;\$/set \$AIPO_PORT_80_TCP_ADDR $AIPO_PORT_80_TCP_ADDR;/g" /etc/nginx/nginx.conf
 CMD sed -i "s/set \$AIPO_PORT_80_TCP_PORT .*;\$/set \$AIPO_PORT_80_TCP_PORT $AIPO_PORT_80_TCP_PORT;/g" /etc/nginx/nginx.conf
+CMD nginx -g "daemon off;"
