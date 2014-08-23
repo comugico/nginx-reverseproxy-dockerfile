@@ -4,7 +4,7 @@ RUN yum update -y
 RUN yum install -y wget tree sudo
 
 RUN wget "http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm" -O "/opt/downloaded.rpm"
-RUN yum localinstall /opt/downloaded.rpm
+RUN yum localinstall -y /opt/downloaded.rpm
 RUN yum install -y nginx
 
 RUN systemctl stop nginx.service
