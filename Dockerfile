@@ -11,4 +11,4 @@ ADD nginx.conf /etc/nginx/conf.d/nginx-reverseproxy-dockerfile.conf
 
 EXPOSE 80
 WORKDIR /etc/nginx
-CMD nginx -c /etc/nginx/conf.d/nginx-reverseproxy-dockerfile.conf -g "daemon off;"
+CMD nginx -g "daemon off;"
