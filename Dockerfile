@@ -14,5 +14,5 @@ WORKDIR /etc/nginx
 
 CMD sed -i "s/set \$AIPO_PORT_80_TCP_ADDR .*;\$/set \$AIPO_PORT_80_TCP_ADDR $AIPO_PORT_80_TCP_ADDR;/g" /etc/nginx/conf.d/nginx-reverseproxy-dockerfile.conf
 CMD sed -i "s/set \$AIPO_PORT_80_TCP_PORT .*;\$/set \$AIPO_PORT_80_TCP_PORT $AIPO_PORT_80_TCP_PORT;/g" /etc/nginx/conf.d/nginx-reverseproxy-dockerfile.conf
-cat /etc/nginx/conf.d/nginx-reverseproxy-dockerfile.conf
+CMD cat /etc/nginx/conf.d/nginx-reverseproxy-dockerfile.conf
 CMD nginx -g "daemon off;"
